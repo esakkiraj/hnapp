@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title 
+      | HNApp - Exotel Challenge
+    link(rel='stylesheet',href='/stylesheets/style.css')
+  body
+    #topband
+      .headersection
+        a.logotext(href='/') HNApp
+        a.headerlinks(href='/submit') Submit Post
+        .loginsection
+          if isLoggedIn != true
+            a.headerlinks.loginbtn(href='#') login | signup
+          else 
+            a.headerlinks.userprofilebtn(href='/users/#{username}') #{username}
+            span |
+            a.headerlinks.logoutbtn(href='/logout') logout
+        - var errorCase = invalidlogin || showError 
+        if( errorCase )
+          #loginpopup
+            span.poppointer
+            .messagebar.errorMessage
+              | #{message}
+            form(action='',method='post', class='loginform')
+              .formInputs
+                .formLabel(data-label='username') Username 
+                input(type='text',class='loginusername', name='username', value='')
+                | <br/>
+                .formLabel(data-label='password') Password
+                input(type='password',class='loginpassword', name='password', value='')
+            .buttonsection 
+              button(class='loginaction actionBtn') Login
+              button(class='createaction actionBtn hidden') Create Account
+            .otherops
+              a(href='javascript:void(0);', data-oprname='login', class='loginOpsLabel hidden') Login
+              a(href='javascript:void(0);', data-oprname='create', class='createOpsLabel') Signup 
+        else 
+          #loginpopup.hidden
+            span.poppointer
+            .messagebar.hidden
+            form(action='/login',method='post', class='loginform')
+              .formInputs
+                .formLabel(data-label='username') Username 
+                input(type='text',class='loginusername', name='username', value='')
+                | <br/>
+                .formLabel(data-label='password') Password
+                input(type='password',class='loginpassword', name='password', value='')
+            .buttonsection 
+              button(class='loginaction actionBtn') Login
+              button(class='createaction actionBtn hidden') Create Account
+            .otherops
+              a(href='javascript:void(0);', data-oprname='login', class='loginOpsLabel hidden') Login
+              a(href='javascript:void(0);', data-oprname='create', class='createOpsLabel') Signup 
+    #bodyContent
+      #postssection
+      #pagintionsection
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/moment.js')
+  script(src='/javascripts/hnapp.js')

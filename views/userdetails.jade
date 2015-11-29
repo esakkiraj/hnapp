@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title 
+      | HNApp - #{username}
+    link(rel='stylesheet',href='/stylesheets/style.css')
+  body
+    #topband
+      .headersection
+        a.logotext(href='/') HNApp
+        a.headerlinks(href='/submit') Submit Post 
+        .loginsection
+          if isLoggedIn != true
+            a.headerlinks.loginbtn(href='#') login | signup
+          else 
+            a.headerlinks.userprofilebtn(href='/users/#{username}') #{username}
+            span |
+            a.headerlinks.logoutbtn(href='/logout') logout
+    #bodyContent
+      .userdetails
+        .formRow
+          span.formLabel Username 
+          | #{username}
+        .formRow
+          span.formLabel Member Since 
+          | #{joineddate}

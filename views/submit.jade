@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+      | HNApp - Submit Post
+    link(rel='stylesheet',href='/stylesheets/style.css')
+  body
+    #topband
+      .headersection
+        a.logotext(href='/') HNApp
+        .loginsection
+          if isLoggedIn != true
+            a.headerlinks.loginbtn(href='#') login | signup
+          else 
+            a.headerlinks.userprofilebtn(href='/users/#{username}') #{username}
+            span |
+            a.headerlinks.logoutbtn(href='/logout') logout
+    #bodyContent
+      .messagebar.hidden
+      form#submitpost(action='/submitpost',method='post',onSubmit='return validateForm();')
+        .formRow
+          label.formLabel URL 
+          input(type='text',value='',class='formInput urlBox',name='url')
+        .formRow
+          input(type='submit',value='Submit Post',class='submitBtn')
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/moment.js')
+  script(src='/javascripts/submit.js')

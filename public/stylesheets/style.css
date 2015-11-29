@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.hidden {
+  display: none;
+}
+#topband {
+  width: 100%;
+  height: 45px;
+  background-color: #5994EC;
+}
+#topband .headersection {
+  margin:0 auto;
+  width: 60%;
+  height: 100%;
+  line-height: 150%; /* Maybe remove this if not needed */
+  background-color: #417FDC;
+  color: white;
+  position: relative;
+}
+.headersection a.logotext {
+  padding: 10px 10px 0 10px;
+  height: calc( 100% - 10px );
+  display: inline-block;
+  font-weight: 500;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+.headersection .logotext:hover {
+  background-color: #5994EC;
+}
+.headersection a.headerlinks {
+  padding: 0 5px;
+  color: white;
+  text-decoration: none;
+}
+.loginsection {
+  margin: 10px 10px 0 0;
+  float: right;
+  display: inline-block;
+}
+#bodyContent {
+  margin: 0 auto;
+  width: 60%;
+}
+#postssection .post {
+  height: 40px;
+  padding: 8px 0;
+}
+.votesection {
+  padding: 0 5px;
+  height: 100%;
+  float: left;
+  display: inline-block;
+}
+.votesection .votebtn {
+  float: left;
+  margin: auto 0;
+}
+.votebtn img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(270deg);
+}
+.votesection .votecount {
+  float: left;
+  clear: left;
+}
+.votecount.starred {
+  font-weight: bold;
+  color: lightblue;
+}
+.detailsection {
+  padding-top: 3px;
+  height: 100%;
+  float: left;
+}
+.detailsection a.posttitle {
+  padding: 0 5px;
+  float: left;
+}
+.detailsection .postdetail {
+  padding: 5px;
+  float: left;
+  clear: left;
+  font-size: 12px;
+  color: #888 !important;
+}
+.post:hover {
+  background-color: #F2F2F2;
+}
+
+/* Login Box styles */
+#loginpopup {
+  padding: 10px;
+  width: 190px;
+  background-color: white;
+  position: absolute;
+  top: 46px;
+  right: 0;
+  border: 1px solid #ECECEC;
+  color: black;
+  box-shadow: 0px 0px 5px #ECECEC;
+}
+#loginpopup .poppointer {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -8px;
+  right: 60px;
+  background-color: white;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.messagebar {
+  padding: 5px 0;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+#loginpopup .actionBtn {
+  padding: 3px;
+  margin: 7px 0;
+  width: 95%;
+  height: 25px;
+  border-radius: 0;
+}
+#loginpopup .buttonsection, #loginpopup .otherops {
+  margin: 5px 0;
+}
+#loginpopup .formLabel {
+  width: 100px;
+}
+#loginpopup input[type=text], #loginpopup input[type=password] {
+  width: 175px;
+  height: 20px;
+}
+#loginpopup .otherops a {
+  text-decoration: underline;
+  padding: 0 3px;
+}
+#loginpopup .otherops a:hover {
+  text-decoration: none;
+}
+.errorMessage {
+  color: red;
+  background-color: #FCFCFC;
+}
+.errorField {
+  border: 2px solid red;
+}
+#submitpost .formRow {
+  padding: 8px 5px; 
+}
+#submitpost .formInput {
+  margin-left: 10px;
+  width: 250px;
+  height: 20px;
+}
+.paginationButton {
+  margin: 10px 5px;
+  padding: 3px 5px;
+  height: 25px;
+  border-radius: none;
+}
+span.formLabel {
+  padding: 10px;
+  min-width: 150px;
+  display: inline-block;
+}
